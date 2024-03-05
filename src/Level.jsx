@@ -32,9 +32,9 @@ export function BlockStart({ position = [ 0, 0, 0 ] })
     </group>
 }
 
-export function BlockEnd({ position = [ 0, 0, 0 ] })
+export function BlockEnd({ position = [ 0, 1, 0 ] })
 {
-    const hamburger = useGLTF('/hamburger.glb')
+    const hamburger = useGLTF('/lego.glb')
 
     hamburger.scene.children.forEach((mesh) =>
     {
@@ -51,8 +51,8 @@ export function BlockEnd({ position = [ 0, 0, 0 ] })
             <meshBasicMaterial toneMapped={ false } />
         </Text>
         <mesh geometry={ boxGeometry } material={ floor1Material } position={ [ 0, 0, 0 ] } scale={ [ 4, 0.2, 4 ] } receiveShadow />
-        <RigidBody type="fixed" colliders="hull" position={ [ 0, 0.25, 0 ] } restitution={ 0.2 } friction={ 0 }>
-            <primitive object={ hamburger.scene } scale={ 0.2 } />
+        <RigidBody type="fixed" colliders="hull" position={ [ 0, 0.1, 0 ] } restitution={ 0.2 } friction={ 0 }>
+            <primitive object={ hamburger.scene } scale={ 0.1 } />
         </RigidBody>
     </group>
 }
